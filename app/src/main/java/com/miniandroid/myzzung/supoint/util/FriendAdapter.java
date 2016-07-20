@@ -45,6 +45,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         final UserInfo item = list.get(position);
         holder.text_id.setText(item.getUserId());
+        holder.text_name.setText(item.getUserName());
         holder.text_point.setText(item.getPoint()+"점");
         holder.text_ranking.setText(item.getRank()+"위");
         holder.btn_push.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +64,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView text_id;
+        public TextView text_name;
         public TextView text_point;
         public TextView text_ranking;
         public Button btn_push;
@@ -71,6 +73,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
         public ViewHolder(View itemView) {
             super(itemView);
             text_id = (TextView)itemView.findViewById(R.id.text_friend_id);
+            text_name = (TextView)itemView.findViewById(R.id.text_friend_name);
             text_point = (TextView)itemView.findViewById(R.id.text_friend_point);
             text_ranking = (TextView)itemView.findViewById(R.id.text_friend_ranking);
             btn_push = (Button)itemView.findViewById(R.id.btn_friend_push);
