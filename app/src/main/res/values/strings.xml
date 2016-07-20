@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Coli</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="text_prepare_service">서비스 준비중입니다</string>
+
+    <!-- TODO: nav items strings -->
+    <string name="nav_home">전체화면</string>
+    <string name="nav_ranking">명예의 전당</string>
+    <string name="nav_friend">친구</string>
+    <string name="nav_settings">설정</string>
+    <string name="nav_community">커뮤니티</string>
+    <string name="title_activity_login">접속하기</string>
+    <string name="title_activity_join">가입하기</string>
+
+    <string name="volley_network_fail">인터넷 연결이 불안정합니다</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">이메일 형식이 올바르지 않습니다</string>
+    <string name="error_invalid_password">비밀번호의 길이가 짧습니다</string>
+    <string name="error_incorrect_password">비밀번호가 틀립니다</string>
+    <string name="error_field_required">이 란은 필수사항 입니다</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- Strings related to setting -->
+    <string name="auto_login_set_true">자동로그인이 설정되었습니다</string>
+    <string name="auto_login_set_false">자동로그인이 해제되었습니다</string>
+    <string name="notification_set_true">푸시알림이 설정되었습니다</string>
+    <string name="notification_set_false">푸시알림이 해제되었습니다</string>
+
+    <!-- user report strings -->
+    <string name="user_report_texthint">여기에 작성해주세요 :)</string>
+    <string name="error_user_report_field_required">내용을 입력해주세요</string>
+    <string name="error_user_report_category_required">카테고리를 선택해주세요</string>
+    <string-array name="user_report_category">
+        <item>선택안함</item>
+        <item>버그신고</item>
+        <item>건의하기</item>
+        <item>기타</item>
+    </string-array>
+
+
+    <!--TODO : search store strings-->
+    <string name="search_store_already_down">다운로드 완료</string>
+    <string name="search_store_down">다운로드</string>
+
+    <!--TODO : coupon works strings-->
+    <string-array name="coupon_work">
+        <item>도장 추가하기</item>
+        <item>도장 사용하기</item>
+        <item>도장 선물하기</item>
+        <item>쿠폰 삭제하기</item>
+    </string-array>
+
+    <!--TODO : Button Text -->
+    <string name="btn_negative_text">취소</string>
+    <string name="btn_positive_text">확인</string>
+
+    <!--TODO : Dialog Text-->
+    <string name="dialog_delete_contents">쿠폰을 정말 삭제할겁니까?</string>
+    <string name="dialog_coupon_use_contents">이 쿠폰을 정말 사용할 겁니까?</string>
+
+
+</resources>
