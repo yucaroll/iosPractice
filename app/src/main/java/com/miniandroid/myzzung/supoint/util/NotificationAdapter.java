@@ -1,34 +1,85 @@
 package com.miniandroid.myzzung.supoint.util;
 
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
+import android.support.annotation.NonNull;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-/**
- * Created by ppang on 16. 7. 22..
- */
-public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolder> {
+import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
+import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
+import com.bignerdranch.expandablerecyclerview.ViewHolder.ChildViewHolder;
+import com.miniandroid.myzzung.supoint.R;
 
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+import com.bignerdranch.expandablerecyclerview.ViewHolder.ParentViewHolder;
+import com.miniandroid.myzzung.supoint.model.NotificationData;
+import com.miniandroid.myzzung.supoint.model.NotificationTitle;
+
+import java.util.List;
+
+public class NotificationAdapter extends ExpandableRecyclerAdapter<NotificationAdapter.NotificationParentViewHolder, NotificationAdapter.NotificationChildViewHolder> {
+
+    private LayoutInflater mInflater;
+
+    public NotificationAdapter(Context context, @NonNull List<? extends ParentListItem> parentListItems){
+        super(parentListItems);
+        mInflater = LayoutInflater.from(context);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-
+    public NotificationParentViewHolder onCreateParentViewHolder(ViewGroup viewGroup) {
+        View parentView = mInflater.inflate(R.layout.item_list_notification_parent,viewGroup,false);
+        return new NotificationParentViewHolder(parentView);
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public NotificationChildViewHolder onCreateChildViewHolder(ViewGroup viewGroup) {
+        View childView = mInflater.inflate(R.layout.item_list_notification_child,viewGroup,false);
+        return new NotificationChildViewHolder(childView);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        public ViewHolder(View itemView){
+    @Override
+    public void onBindParentViewHolder(NotificationParentViewHolder parentViewHolder, int position, ParentListItem parentListItem) {
+        NotificationTitle notificationTitle = (NotificationTitle) parentListItem;
+        parentViewHolder.bind(notificationTitle);
+    }
+
+    @Override
+    public void onBindChildViewHolder(NotificationChildViewHolder childViewHolder, int position, Object childListItem) {
+        NotificationData notificationData = (NotificationData) childListItem;
+        childViewHolder.bind(notificationData);
+    }
+
+    public class NotificationParentViewHolder extends ParentViewHolder{
+        public TextView mParentTitleTextView;
+        public ImageView mParentExpandView;
+
+        public NotificationParentViewHolder(View itemView){
             super(itemView);
 
+            mParentTitleTextView = (TextView) itemView.findViewById(R.id.item_list_notification_parent_title);
+            mParentExpandView = (ImageView) itemView.findViewById(R.id.item_list_notification_parent_view);
+        }
+
+        public void bind(NotificationTitle notificationTitle) {
+            mParentTitleTextView.setText(notificationTitle.getTitle());
         }
     }
 
+    public class NotificationChildViewHolder extends ChildViewHolder{
+        public TextView mChildDataTextView;
+
+        public NotificationChildViewHolder(View itemView){
+            super(itemView);
+
+            mChildDataTextView = (TextView) itemView.findViewById(R.id.item_list_notification_child_text);
+        }
+
+        public void bind(NotificationData notificationData){
+            mChildDataTextView.setText(notificationData.getData());
+        }
+    }
 }
