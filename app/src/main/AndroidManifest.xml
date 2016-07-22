@@ -35,6 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.NotificationActivity"/>
         <activity android:name="com.miniandroid.myzzung.supoint.ui.UserReportActivity"/>
         <activity android:name="com.miniandroid.myzzung.supoint.ui.PresentActivity"/>
         <!-- [START gcm_receiver] -->
